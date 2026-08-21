@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Priya Kumari | Frontend Developer  </title>
+    <title>Priya Kumari | Frontend Developer & Data Analyst</title>
 
     <style>
         * {
@@ -36,21 +36,10 @@
         }
 
         .logo {
-    display: flex;
-    align-items: right;
-    gap: 5px;
-    max-width: 5px;
-    max-height: 5px;
-    font-size: 10px;
-    font-weight: bold;
-}
-
-.logo img {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+            font-size: 24px;
+            font-weight: bold;
+            color: #4f46e5;
+        }
 
         nav ul {
             display: flex;
@@ -74,29 +63,22 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 120px 10% 60px;
-            gap: 50px;
+            padding: 120px 10% 70px;
+            gap: 60px;
         }
 
         .hero-text {
             max-width: 650px;
         }
 
-        .hero-text p:first-child {
+        .hero-text .hello {
             color: #4f46e5;
             font-size: 20px;
             font-weight: bold;
         }
 
-        .contact img {
-         width: 20px;
-          height: 20px;
-         object-fit: contain;
-         vertical-align: middle;
-         }
-
         .hero-text h1 {
-            font-size: 58px;
+            font-size: 56px;
             margin: 10px 0;
         }
 
@@ -117,11 +99,13 @@
 
         .btn {
             display: inline-block;
-            padding: 12px 25px;
+            padding: 12px 22px;
             margin-right: 10px;
-            border-radius: 6px;
+            margin-bottom: 10px;
+            border-radius: 7px;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         .primary {
@@ -129,22 +113,29 @@
             color: white;
         }
 
+        .primary:hover {
+            background: #3730a3;
+            transform: translateY(-2px);
+        }
+
         .secondary {
             border: 2px solid #4f46e5;
             color: #4f46e5;
         }
 
-        .profile {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
+        .secondary:hover {
             background: #4f46e5;
             color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 100px;
-            box-shadow: 0 20px 50px rgba(79,70,229,0.3);
+        }
+
+        .profile-img {
+            width: 380px;
+            height: 500px;
+            object-fit: cover;
+            /*border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(79,70,229,0.20);*/
+            object-position: center 30%;
+            border-radius: 25px;
         }
 
         /* COMMON */
@@ -179,43 +170,47 @@
         .about p {
             color: #64748b;
             margin-bottom: 15px;
+            font-size: 16px;
         }
 
         /* SKILLS */
+        .skill-category {
+            margin-bottom: 45px;
+        }
+
+        .skill-category h2 {
+            margin-bottom: 20px;
+        }
+
         .skills {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
-        .small-skills {
-    font-size: 14px;
-        }
-
         .skill {
             background: white;
-            padding: 30px 15px;
+            padding: 28px 15px;
             text-align: center;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.06);
             transition: 0.3s;
         }
-        /*.data-database .skill {
-            width: 200px;
-            height: 10px;
-        }
-        .data-database {
-            grid-template-columns: repeat(3,1fr);
-        }*/
-        
-
 
         .skill:hover {
-            transform: translateY(-8px);
+            transform: translateY(-7px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.10);
         }
 
         .skill .icon {
-            font-size: 45px;
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .skill img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
             margin-bottom: 12px;
         }
 
@@ -244,6 +239,11 @@
             overflow: hidden;
             background: #f8fafc;
             box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
         }
 
         .project-top {
@@ -260,7 +260,7 @@
 
         .project-content p {
             color: #64748b;
-            margin: 10px 0;
+            margin: 10px 0 15px;
         }
 
         .tags {
@@ -280,12 +280,13 @@
 
         /* EDUCATION */
         .education {
-            max-width: 750px;
+            max-width: 800px;
             margin: auto;
             background: white;
             padding: 30px;
             border-left: 5px solid #4f46e5;
             border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
         }
 
         .education h3 {
@@ -327,58 +328,57 @@
         }
 
         /* MOBILE */
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
+
+            #home {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .profile-img {
+                width: 300px;
+                height: 350px;
+            }
+
+            .skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
 
             nav {
                 padding: 15px 5%;
             }
 
             nav ul {
-                gap: 10px;
-                font-size: 13px;
-            }
-
-            #home {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding-top: 130px;
-            }
-
-            .hero-text h1 {
-                font-size: 42px;
-            }
-
-            .profile {
-                width: 210px;
-                height: 210px;
-                font-size: 70px;
-            }
-
-            .skills {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .projects {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            nav ul {
                 display: none;
-            }
-
-            .skills {
-                grid-template-columns: 1fr;
             }
 
             section {
                 padding: 70px 6%;
             }
-            
 
-            
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-text h2 {
+                font-size: 23px;
+            }
+
+            .profile-img {
+                width: 250px;
+                height: 300px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -405,40 +405,42 @@
 
         <div class="hero-text">
 
-            <p>Hello, I'm</p>
+            <p class="hello">Hello, I'm</p>
 
             <h1>Priya Kumari</h1>
 
-            <h2>Frontend Developer | Data Analysis </h2>
+            <h2>Frontend Developer & Data Analyst</h2>
 
             <p>
-                BCA graduate and aspiring Frontend Developer & Data Analyst, 
-                passionate about building responsive , user-friendly
-                 web applications and working with data using SQL and data analysis techniques.
+                BCA graduate skilled in HTML, CSS, JavaScript, React.js,
+                SQL and Excel. Passionate about building responsive,
+                user-friendly web applications and working with data
+                to create meaningful insights.
             </p>
 
             <div class="buttons">
+
                 <a href="#projects" class="btn primary">
                     View Projects
+                </a>
+
+                <a href="Priya-resume.pdf" class="btn secondary" target="_blank">
+                    Download Resume
                 </a>
 
                 <a href="#contact" class="btn secondary">
                     Contact Me
                 </a>
+
             </div>
 
         </div>
 
-        
-            <img src="image3.jpg" alt="priya kumari" 
-            style="
-            width:600px;
-            height:700px;
-            border-radius: 30%;
-            object-fit:cover;">
-            
-            
-       
+        <img
+            src="image3.jpg"
+            alt="Priya Kumari"
+            class="profile-img"
+        >
 
     </section>
 
@@ -453,19 +455,19 @@
         <div class="about">
 
             <p>
-                I am a BCA graduate with an interest in
-                frontend development | software development and Data Analysis.
+                I am a BCA graduate with an interest in frontend development,
+                software development and data analysis.
             </p>
 
             <p>
-                I have practical knowledge of HTML, CSS,
-                JavaScript, React.js, SQL and Git & GitHub.
+                I have practical knowledge of HTML, CSS, JavaScript,
+                React.js, SQL, Excel and Git & GitHub.
             </p>
 
             <p>
-                I enjoy building responsive web applications and 
+                I enjoy building responsive web applications and
                 working with data to gain meaningful insights.
-                I am eager to learn, grow and contribute to a professional team
+                I am eager to learn, grow and contribute to a professional team.
             </p>
 
         </div>
@@ -480,96 +482,112 @@
             <h2>My <span>Skills</span></h2>
         </div>
 
-        <h2> Frontend Developer </h2><br>
 
-        <div class="skills">
+        <!-- FRONTEND -->
+        <div class="skill-category">
 
-
-            <div class="skill">
-                <div class="icon">🌐</div>
-                <h3>HTML</h3>
-                <p>Semantic and structured web development</p>
-            </div>
-
-            <div class="skill">
-                <div class="icon">🎨</div>
-                <h3>CSS</h3>
-                <p>Responsive layouts and modern UI design</p>
-            </div>
-
-            <div class="skill">
-                <div class="icon">⚡</div>
-                <h3>JavaScript</h3>
-                <p>Interactive and dynamic web applications</p>
-            </div>
-
-            <div class="skill">
-                <div class="icon">⚛️</div>
-                <h3>React.js</h3>
-                <p>Component-based frontend development</p>
-            </div>
-        </div>
-        <div>
-            <br>
-
-            <h2> Data & Database </h2><br>
+            <h2>Frontend Development</h2>
 
             <div class="skills">
 
-            <div class="skill">
-                <div class="icon">🗄️</div>
-                <h3>SQL</h3>
-                <p>Queries, database management and data handling</p>
-                
-            </div>
+                <div class="skill">
+                    <div class="icon">🌐</div>
+                    <h3>HTML</h3>
+                    <p>Semantic and structured web development</p>
+                </div>
 
-            
+                <div class="skill">
+                    <div class="icon">🎨</div>
+                    <h3>CSS</h3>
+                    <p>Responsive layouts and modern UI design</p>
+                </div>
 
-            <div class="skill">
-             <img src="excel.jpg" alt="Excel"> 
-                <h3>Excel</h3>
-                <p>Data analysis, formulas and data visualization </p>
-            </div>
+                <div class="skill">
+                    <div class="icon">⚡</div>
+                    <h3>JavaScript</h3>
+                    <p>Interactive and dynamic web applications</p>
+                </div>
 
-            <div class="skill">
-                <div class="icon">📊</div>
-                <h3>Data Analysis</h3>
-                <p>Basic Excel, SQL and data handling</p>
-            </div>
+                <div class="skill">
+                    <div class="icon">⚛️</div>
+                    <h3>React.js</h3>
+                    <p>Component-based frontend development</p>
+                </div>
+
             </div>
 
         </div>
-        <div>
-            <br>
-            <h2> Programming  Concepts </h2>
-            <br>
+
+
+        <!-- DATA & DATABASE -->
+        <div class="skill-category">
+
+            <h2>Data & Database</h2>
+
             <div class="skills">
 
-            <div class="skill">
-                <img src="oops.jpg" alt="Oops concepts">
-              <h3>OOP Concepts</h3>
-               <p>Object-oriented programming concepts</p>
-        </div>
-        </div>
+                <div class="skill">
+                    <div class="icon">🗄️</div>
+                    <h3>SQL</h3>
+                    <p>Queries, database management and data handling</p>
+                </div>
 
-        <div>
-            <br>
-            <h2> Tools </h2> <br>
-            <div class="skills">
-            <div class="skill">
-                <div class="icon">🔧</div>
-                <h3>Git</h3>
-                <p>Version control and project management</p>
-            </div> 
-        
+                <div class="skill">
+                    <img src="excel.jpg" alt="Excel">
+                    <h3>Excel</h3>
+                    <p>Data analysis, formulas and data visualization</p>
+                </div>
 
-            <div class="skill">
-                <div class="icon">🐙</div>
-                <h3>GitHub</h3>
-                <p>Repository management and collaboration</p>
+                <div class="skill">
+                    <div class="icon">📊</div>
+                    <h3>Data Analysis</h3>
+                    <p>Basic Excel, SQL and data handling</p>
+                </div>
+
             </div>
 
         </div>
+
+
+        <!-- PROGRAMMING -->
+        <div class="skill-category">
+
+            <h2>Programming Concepts</h2>
+
+            <div class="skills">
+
+                <div class="skill">
+                    <img src="oops.jpg" alt="OOP Concepts">
+                    <h3>OOP Concepts</h3>
+                    <p>Object-oriented programming concepts</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOOLS -->
+        <div class="skill-category">
+
+            <h2>Tools</h2>
+
+            <div class="skills">
+
+                <div class="skill">
+                    <div class="icon">🔧</div>
+                    <h3>Git</h3>
+                    <p>Version control and project management</p>
+                </div>
+
+                <div class="skill">
+                    <div class="icon">🐙</div>
+                    <h3>GitHub</h3>
+                    <p>Repository management and collaboration</p>
+                </div>
+
+            </div>
+
         </div>
 
     </section>
@@ -584,6 +602,7 @@
 
         <div class="projects">
 
+            <!-- PROJECT 1 -->
             <div class="project">
 
                 <div class="project-top">
@@ -595,8 +614,8 @@
                     <h3>E-Commerce Website</h3>
 
                     <p>
-                        A responsive e-commerce website with
-                        product sections and user-friendly UI.
+                        A responsive e-commerce website with product
+                        sections and a user-friendly interface.
                     </p>
 
                     <div class="tags">
@@ -605,7 +624,10 @@
                         <span>JavaScript</span>
                     </div>
 
-                    <a href="https://priyagupta0965-maker.github.io/ecommerce-website/" class="btn primary">
+                    <a
+                        href="https://priyagupta0965-maker.github.io/ecommerce-website/"
+                        target="_blank"
+                        class="btn primary">
                         Live Demo
                     </a>
 
@@ -614,6 +636,7 @@
             </div>
 
 
+            <!-- PROJECT 2 -->
             <div class="project">
 
                 <div class="project-top">
@@ -625,7 +648,7 @@
                     <h3>Student Management System</h3>
 
                     <p>
-                        A project for managing student information
+                        A web-based project for managing student information
                         using web technologies and SQL concepts.
                     </p>
 
@@ -636,7 +659,9 @@
                         <span>SQL</span>
                     </div>
 
-                    <a href="#" class="btn primary">
+                    <a
+                        href="#"
+                        class="btn primary">
                         GitHub
                     </a>
 
@@ -666,7 +691,7 @@
 
             <p>
                 Studied programming, web development, database management,
-                 SQL, data analysis, and computer applications.
+                SQL, data analysis and computer applications.
             </p>
 
         </div>
@@ -686,21 +711,19 @@
             <h3>Let's Connect</h3>
 
             <p>
-                I am open to opportunities in Frontend
-                Development and Software Development.
+                I am open to opportunities in Frontend Development,
+                Software Development and Data Analysis.
             </p>
 
-            <p><img src="email.jpg" alt="Email">
-                Email: 
-                <a  
-                href="mailto:priyagupta0965@gmail.com">
-                priyagupta0965@gmail.com
+            <p>
+                📧 Email:
+                <a href="mailto:priyagupta0965@gmail.com">
+                    priyagupta0965@gmail.com
                 </a>
             </p>
 
             <p>
-                <img src="linkdin2.png" alt="linkedin">
-                LinkedIn:
+                💼 LinkedIn:
                 <a
                     href="https://www.linkedin.com/in/priya-gupta-4826192a4/"
                     target="_blank">
@@ -709,9 +732,10 @@
             </p>
 
             <p>
-                <img src="githube2.png" alt="githube">
-                GitHub:
-                <a href="https://priyagupta0965-maker.github.io/ecommerce-website/" target="_blank">
+                🐙 GitHub:
+                <a
+                    href="https://github.com/priyagupta0965-maker"
+                    target="_blank">
                     View GitHub
                 </a>
             </p>
@@ -723,14 +747,17 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Priya Kumari | Frontend Developer</p>
+
+        <p>
+            © 2026 Priya Kumari | Frontend Developer & Data Analyst
+        </p>
+
     </footer>
 
 
     <!-- JAVASCRIPT -->
     <script>
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(link => {
 
             link.addEventListener("click", function(e) {
@@ -740,19 +767,19 @@
                 );
 
                 if (target) {
+
                     e.preventDefault();
 
                     target.scrollIntoView({
                         behavior: "smooth"
                     });
+
                 }
 
             });
 
         });
 
-
-        // Welcome message
         console.log(
             "Welcome to Priya Kumari's Portfolio!"
         );
